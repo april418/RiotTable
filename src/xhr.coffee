@@ -30,3 +30,4 @@ class XHR
           reject request.status, request.statusText
 
 module.exports = XHR
+

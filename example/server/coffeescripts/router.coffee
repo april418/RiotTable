@@ -1,8 +1,9 @@
 urlParser = require 'url'
 
+ORIGIN = 'example/public'
+
 ROUTES =
-  '/': 'app/bin/client/html/index.html'
-  '/post': ''
+  '/': 'example/public/templates/index.html'
 
 class Router
   constructor: (options = {}) ->
@@ -14,7 +15,8 @@ class Router
     parsedUrl = urlParser.parse url
     requestUrl = parsedUrl.pathname
     console.log "About to route a request for #{requestUrl}"
-    requestPath = @routes[url] ? ".#{requestUrl}"
+    requestPath = @routes[url] ? "#{ORIGIN}#{requestUrl}"
     @handler.handle requestPath, requestData, response
 
 module.exports = Router
+

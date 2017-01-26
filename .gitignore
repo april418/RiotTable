@@ -1,2 +1,6 @@
 node_modules/*
-app/bin/*
+example/public/javascripts/*
+example/public/stylesheets/*
+example/public/templates/*
+npm-debug.log
+

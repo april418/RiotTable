@@ -26,10 +26,10 @@ riot-table
 
   script.
     # include built-in objects extentions
-    require('../../common/coffee/extensions.coffee').apply window
+    require('../example/client/coffeescripts/extensions.coffee').apply window
 
     # include XMLHttpRequest module like jQuery.ajax()
-    XHR = require '../coffee/xhr.coffee'
+    XHR = require './xhr.coffee'
 
     # ========================================
     #   instance variables

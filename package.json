@@ -1,40 +1,27 @@
 {
-  "name": "RiotTable",
+  "name": "riot-table",
   "version": "0.1.0",
-  "description": "Riot.js table example",
-  "main": "app/bin/server/js/index.js",
+  "description": "Riot.javascripts table example",
+  "main": "example/server/javascripts/index.js",
+  "browser": "src/riot-table.tag",
   "scripts": {
     "prestart": "npm run build",
-    "start": "node app/bin/server/js/index.js & npm run watch",
-    "poststart": "",
-    "stop": "",
+    "start": "node example/server/javascripts/index.js & npm run watch",
     "restart": "npm stop && npm start",
     "build": "npm-run-all --parallel build:*",
-    "build:tags": "browserify app/client/coffee/index.coffee > app/bin/client/js/index.js",
-    "build:pug": "pug --pretty --no-debug --out app/bin/client/html/ app/client/pug/",
-    "build:sass": "node-sass --output app/bin/client/css/ app/client/sass/",
-    "build:coffee-common": "coffee --output app/bin/common/js/ app/common/coffee/",
-    "build:coffee-server": "coffee --output app/bin/server/js/ app/server/coffee/",
+    "build:tags": "browserify example/client/coffeescripts/index.coffee > example/public/javascripts/index.js",
+    "build:pug": "pug --pretty --no-debug --out example/public/templates/ example/client/templates/",
+    "build:sass": "node-sass --output example/public/stylesheets/ example/client/stylesheets/",
+    "build:server": "coffee --output example/server/javascripts/ example/server/coffeescripts/",
     "watch": "npm-run-all --parallel watch:*",
-    "watch:tags": "watch 'npm run build:tags' app/client/tags/ app/common/coffee/ app/client/coffee/",
-    "watch:pug": "watch 'npm run build:pug' app/client/pug/",
-    "watch:sass": "watch 'npm run build:sass' app/client/sass/",
-    "watch:coffee-common": "watch 'npm run build:coffee-common' app/common/coffee/",
-    "watch:coffee-server": "watch 'npm run build:coffee-server' app/server/coffee/"
+    "watch:client": "watch 'npm run build:tags' src/ example/client/coffeescripts/",
+    "watch:pug": "watch 'npm run build:pug' example/client/templates/",
+    "watch:sass": "watch 'npm run build:sass' example/client/stylesheets/",
+    "watch:server": "watch 'npm run build:server' example/server/coffeescripts/"
   },
   "repository": "https://github.com/april418/RiotTable.git",
   "author": "april_418",
   "license": "MIT",
-  "devDependencies": {
-    "browserify": "^13.1.1",
-    "coffee-script": "^1.12.0",
-    "coffeeify": "^2.0.1",
-    "materialize-css": "^0.97.8",
-    "node-sass": "^3.13.0",
-    "pug": "^2.0.0-beta6",
-    "riot": "^3.0.2",
-    "riotify": "^2.0.0"
-  },
   "browserify": {
     "transform": [
       [
@@ -42,12 +29,21 @@
         {
           "type": "coffeescript",
           "expr": true,
-          "template": "pug"
+          "template": "pug",
+          "style": "sass"
         }
       ],
       [
         "coffeeify"
       ]
     ]
+  },
+  "dependencies": {
+    "coffeeify": "^2.1.0",
+    "materialize-css": "^0.97.8",
+    "pug": "^2.0.0-beta8",
+    "riot": "^3.0.7",
+    "riot-compiler": "^3.1.2",
+    "riotify": "^2.0.0"
   }
 }

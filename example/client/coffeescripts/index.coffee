@@ -1,8 +1,8 @@
 require 'materialize-css/js/materialize.js'
+require('./extensions.coffee').apply window
+require '../../../src/riot-table.tag'
 
 riot = require 'riot'
-require('../../common/coffee/extensions.coffee').apply window
-require '../tags/riot-table.tag'
 
 items = ({name: ['hoge', 'huga', 'piyo', 'foo', 'bar', 'baz'].sample(), value: (i * 100 for i in [1...100]).sample()} for i in [1..90])
 
