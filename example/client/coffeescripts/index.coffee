@@ -1,23 +1,64 @@
 require 'materialize-css/js/materialize.js'
-require('./extensions.coffee').apply window
 require '../../../src/riot-table.tag'
 
 riot = require 'riot'
 
-items = ({name: ['hoge', 'huga', 'piyo', 'foo', 'bar', 'baz'].sample(), value: (i * 100 for i in [1...100]).sample()} for i in [1..90])
+items = [
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+  {name: 'hoge', value: 3500}
+  {name: 'huga', value: 500}
+  {name: 'piyo', value: 4900}
+  {name: 'foo', value: 10000}
+  {name: 'bar', value: 50}
+  {name: 'baz', value: 2000}
+]
 
 riot.mount 'riot-table',
-  columns: [
-    'name'
-    'value'
-  ]
-  headers:
-    name:
+  header: [
+    {
+      key: 'name'
       label: 'Name'
       sortable: false
-    value:
+    }
+    {
+      key: 'value'
       label: 'Value'
-      sortable: true
+    }
+  ]
   items: items
-  debug: true
 
