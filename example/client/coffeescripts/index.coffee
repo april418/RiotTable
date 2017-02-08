@@ -61,4 +61,5 @@ riot.mount 'riot-table',
     }
   ]
   items: items
+  debug: true
 

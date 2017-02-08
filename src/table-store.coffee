@@ -52,6 +52,7 @@ class BaseObject extends Object
 
   match: (term) ->
     @any (k, v) ->
+      return false if /Function/.test Object::toString.call(v)
       new RegExp(RegExp.escape term).test v
 
 
@@ -338,11 +339,18 @@ class TableStore
     @pushPrevState()
     @state = @popNextState()
 
+  canUndo: ->
+    @prevStatus.length > 0
+
+  canRedo: ->
+    @nextStatus.length > 0
+
   search: (term) ->
     @pushPrevState()
-    @state.setTerm term
+    @state.setSearchTerm term
 
   sort: (column) ->
+    return unless column.isSortable()
     @pushPrevState()
     key = column.key
     if @state.getSortColumn() is key

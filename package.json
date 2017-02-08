@@ -44,10 +44,13 @@
     ]
   },
   "dependencies": {
-    "coffeeify": "^2.1.0",
     "materialize-css": "^0.97.8",
+    "riot": "^3.0.7"
+  },
+  "devDependencies": {
+    "coffeeify": "^2.1.0",
+    "node-sass": "^4.5.0",
     "pug": "^2.0.0-beta8",
-    "riot": "^3.0.7",
     "riot-compiler": "^3.1.2",
     "riotify": "^2.0.0"
   }
