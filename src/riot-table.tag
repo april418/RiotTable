@@ -25,11 +25,11 @@ riot-table
 
   div.table-content(onResize="{ handleResize }")
     table.table-body.centered.highlight
+      //- dummy header for fix width (display: none)
       thead
         tr
           th(each="{^ column in store.getHeader() }")
             | { column.getLabel() }
-            //- dummy icon
             i.tiny.material-icons(if="{ column.isSortable() }") swap_vert
       tbody
         tr(each="{^ item in store.getItems() }"
@@ -107,7 +107,7 @@ riot-table
       @store.previousPage()
 
     @handleClickPager = (event) =>
-      page = event.item?.currentPage
+      page = event.item?.page
       if @debug
         console.log 'Pager fired Click event.'
         console.log page

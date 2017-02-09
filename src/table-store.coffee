@@ -52,6 +52,7 @@ class BaseObject extends Object
 
   match: (term) ->
     @any (k, v) ->
+      # exclude function
       return false if /Function/.test Object::toString.call(v)
       new RegExp(RegExp.escape term).test v
 
