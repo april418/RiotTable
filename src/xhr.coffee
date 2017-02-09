@@ -2,7 +2,7 @@ class XHR
   constructor: (options) ->
     @url = options.url
     @method = options.method?.toUpperCase() ? 'GET'
-    @contentType = options.contentType ? ''
+    @dataType = options.dataType ? 'json'
     @data = options.data ? {}
     @async = options.async ? true
     # URLは必須
@@ -19,6 +19,7 @@ class XHR
     new Promise (resolve, reject) =>
       request = new XMLHttpRequest()
       request.open @method, @url, @async
+      request.responseType = @dataType
       request.onreadystatechange = ->
         # 通信完了以外は処理しない
         return unless request.readyState is 4
@@ -28,6 +29,7 @@ class XHR
         # 通信失敗(400~500系)時
         else
           reject request.status, request.statusText
+
 
 module.exports = XHR
 
