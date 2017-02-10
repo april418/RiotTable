@@ -2,5 +2,6 @@ node_modules/*
 example/public/javascripts/*
 example/public/stylesheets/*
 example/public/templates/*
+example/server/javascripts/*
 npm-debug.log
 
