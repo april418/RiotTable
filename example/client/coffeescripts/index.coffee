@@ -1,5 +1,5 @@
 require 'materialize-css/js/materialize.js'
-require '../../../src/riot-table.tag'
+require '../../../src/components/riot-table.tag'
 
 riot = require 'riot'
 

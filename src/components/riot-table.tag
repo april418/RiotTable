@@ -60,9 +60,9 @@ riot-table
   script.
     require './preloader.tag'
     # manage table state
-    TableStore = require './table-store.coffee'
-    TableAction = require './table-action.coffee'
-    TableDispatcher = require './table-dispatcher.coffee'
+    TableStore = require '../coffeescripts/table-store.coffee'
+    TableAction = require '../coffeescripts/table-action.coffee'
+    TableDispatcher = require '../coffeescripts/table-dispatcher.coffee'
 
     # ========================================
     #   instance variables

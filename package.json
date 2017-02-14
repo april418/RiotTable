@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Riot.js table example",
   "main": "example/server/javascripts/index.js",
-  "browser": "src/riot-table.tag",
+  "browser": "src/components/riot-table.tag",
   "scripts": {
     "prestart": "npm run init && npm run build",
     "start": "node example/server/javascripts/index.js & npm run watch",
@@ -23,10 +23,10 @@
     "build:sass": "node-sass --output example/public/stylesheets/ example/client/stylesheets/",
     "watch": "npm-run-all --parallel watch:*",
     "watch:coffeescripts": "npm-run-all --parallel watch:coffeescripts:*",
-    "watch:coffeescripts:client": "watch 'npm run build:coffeescripts:client' src/ example/client/coffeescripts/",
+    "watch:coffeescripts:client": "watch 'npm run build:coffeescripts:client' src/components src/coffeescripts/ example/client/coffeescripts/",
     "watch:coffeescripts:server": "watch 'npm run build:coffeescripts:server' example/server/coffeescripts/",
     "watch:pug": "watch 'npm run build:pug' example/client/templates/",
-    "watch:sass": "watch 'npm run build:sass' src/ example/client/stylesheets/",
+    "watch:sass": "watch 'npm run build:sass' src/stylesheets/ example/client/stylesheets/",
     "test": "karma start"
   },
   "repository": "https://github.com/april418/RiotTable.git",
