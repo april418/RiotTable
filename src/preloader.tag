@@ -1,0 +1,32 @@
+preloader
+  div.preloader.center-align
+    div.preloader-wrapper.big.active
+      div.spinner-layer.spinner-blue
+        div.circle-clipper.left
+          div.circle
+        div.gap-patch
+          div.circle
+        div.circle-clipper.right
+          div.circle
+      div.spinner-layer.spinner-red
+        div.circle-clipper.left
+          div.circle
+        div.gap-patch
+          div.circle
+        div.circle-clipper.right
+          div.circle
+      div.spinner-layer.spinner-yellow
+        div.circle-clipper.left
+          div.circle
+        div.gap-patch
+          div.circle
+        div.circle-clipper.right
+          div.circle
+      div.spinner-layer.spinner-green
+        div.circle-clipper.left
+          div.circle
+        div.gap-patch
+          div.circle
+        div.circle-clipper.right
+          div.circle
+

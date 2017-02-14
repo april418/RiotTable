@@ -15,36 +15,7 @@ riot-table
   div(if="{ not store.isLoading() and not store.hasItem() }")
     p record not found.
 
-  div.preloader.center-align(if="{ store.isLoading() }")
-    div.preloader-wrapper.big.active
-      div.spinner-layer.spinner-blue
-        div.circle-clipper.left
-          div.circle
-        div.gap-patch
-          div.circle
-        div.circle-clipper.right
-          div.circle
-      div.spinner-layer.spinner-red
-        div.circle-clipper.left
-          div.circle
-        div.gap-patch
-          div.circle
-        div.circle-clipper.right
-          div.circle
-      div.spinner-layer.spinner-yellow
-        div.circle-clipper.left
-          div.circle
-        div.gap-patch
-          div.circle
-        div.circle-clipper.right
-          div.circle
-      div.spinner-layer.spinner-green
-        div.circle-clipper.left
-          div.circle
-        div.gap-patch
-          div.circle
-        div.circle-clipper.right
-          div.circle
+  preloader(if="{ store.isLoading() }")
 
   table.table-header.centered.highlight(if="{ not store.isLoading() and store.hasItem() }")
     thead
@@ -87,6 +58,7 @@ riot-table
           a: i.material-icons chevron_right
 
   script.
+    require './preloader.tag'
     # manage table state
     TableStore = require './table-store.coffee'
     TableAction = require './table-action.coffee'

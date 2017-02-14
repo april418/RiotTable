@@ -1,5 +1,5 @@
 XHR = require './xhr.coffee'
-BaseObject = require './base_object.coffee'
+BaseObject = require './base-object.coffee'
 
 
 ORDER =
@@ -107,7 +107,7 @@ class AjaxTableItems extends TableItems
     count: 0
     loading: false
     convertResponseData: null
-    convertRequestData: null
+    convertRequestData: (data) -> data?.items ? []
 
   constructor: (params = {}) ->
     throw new MissingUrlError unless params.url
