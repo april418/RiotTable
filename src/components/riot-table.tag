@@ -71,7 +71,6 @@ riot-table
     @store = new TableStore
       header: opts.header
       items: opts.items
-    console.log @store
     @dispatcher = new TableDispatcher(@store)
     @onClickRow = opts.onClickRow
     @onMouseOverRow = opts.onMouseOverRow
