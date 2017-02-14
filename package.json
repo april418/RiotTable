@@ -26,7 +26,8 @@
     "watch:coffeescripts:client": "watch 'npm run build:coffeescripts:client' src/ example/client/coffeescripts/",
     "watch:coffeescripts:server": "watch 'npm run build:coffeescripts:server' example/server/coffeescripts/",
     "watch:pug": "watch 'npm run build:pug' example/client/templates/",
-    "watch:sass": "watch 'npm run build:sass' src/ example/client/stylesheets/"
+    "watch:sass": "watch 'npm run build:sass' src/ example/client/stylesheets/",
+    "test": "karma start"
   },
   "repository": "https://github.com/april418/RiotTable.git",
   "author": "april418",
@@ -52,15 +53,24 @@
     "riot": "^3.0.7"
   },
   "devDependencies": {
+    "browserify": "^14.0.0",
+    "chai": "^3.5.0",
+    "coffee-script": "^1.12.3",
     "coffeeify": "^2.1.0",
+    "jquery": "^3.1.1",
     "karma": "^1.4.1",
+    "karma-browserify": "^5.1.1",
+    "karma-chai": "^0.1.0",
+    "karma-coffee-preprocessor": "^1.0.1",
     "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-riot": "^2.0.0",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
     "pug": "^2.0.0-beta8",
     "riot-compiler": "^3.1.2",
-    "riotify": "^2.0.0"
+    "riotify": "^2.0.0",
+    "watchify": "^3.9.0"
   }
 }
