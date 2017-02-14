@@ -47,5 +47,5 @@ class BaseObject extends Object
       new RegExp(RegExp.escape term).test v
 
 
-  module.exports = BaseObject
+module.exports = BaseObject
 
