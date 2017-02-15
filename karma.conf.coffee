@@ -39,6 +39,7 @@ module.exports = (config) ->
 
     # List of files/patterns to load in the browser.
     files: [
+      'node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js'
       'spec/**/*-spec.coffee'
     ]
 
@@ -109,5 +110,5 @@ module.exports = (config) ->
     # Continuous Integration mode.
     # If true, Karma will start and capture all configured browsers,
     # run tests and then exit with an exit code of 0 or 1 depending on whether all tests passed or any tests failed.
-    singleRun: true
+    singleRun: false
 
