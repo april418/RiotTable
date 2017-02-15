@@ -29,7 +29,7 @@
     "watch:sass": "watch 'npm run build:sass' src/stylesheets/ example/client/stylesheets/",
     "test": "karma start"
   },
-  "repository": "https://github.com/april418/RiotTable.git",
+  "repository": "https://github.com/april418/riot-table.git",
   "author": "april418",
   "license": "MIT",
   "browserify": {
@@ -43,9 +43,7 @@
           "style": "sass"
         }
       ],
-      [
-        "coffeeify"
-      ]
+      "coffeeify"
     ]
   },
   "dependencies": {

@@ -1,0 +1,13 @@
+ORDER =
+  ASC: 'asc'
+  DESC: 'desc'
+
+ORDER_VALUES = [
+  ORDER.ASC
+  ORDER.DESC
+]
+
+
+exports.ORDER = ORDER
+exports.ORDER_VALUES = ORDER_VALUES
+
