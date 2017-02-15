@@ -75,6 +75,7 @@ module.exports = (config) ->
     plugins: [
       'karma-mocha'
       'karma-mocha-reporter'
+      'karma-nyan-reporter'
       'karma-chai'
       'karma-coffee-preprocessor'
       'karma-phantomjs-launcher'
@@ -95,7 +96,8 @@ module.exports = (config) ->
     # A list of reporters to use.
     # Additional reporters, such as growl, junit, teamcity or coverage can be loaded through plugins.
     reporters: [
-      'mocha'
+      #'mocha'
+      'nyan'
     ]
 
     # RIOT preprocessor config
