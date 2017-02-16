@@ -6,7 +6,7 @@ describe 'TableAction', ->
 
   describe '#constructor', ->
     it '引数にtypeがないときエラーになること', ->
-      (-> new TableAction()).should.throw()
+      expect(-> new TableAction()).to.throw TableAction.MissingActionTypeError
 
   describe '#getType', =>
     it '@typeと同じ値が取得できること', =>

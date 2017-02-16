@@ -6,12 +6,9 @@ class TableHeader
     constructor: ->
       super 'Can only set order to one column.'
 
-  @INITIAL_STATE:
-    columns: []
-
   constructor: (header_params = []) ->
     @validateMultipleOrder header_params
-    Object.assign @, TableHeader.INITIAL_STATE
+    @columns = []
     @initializeHeader header_params
 
   clone: ->

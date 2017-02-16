@@ -1,4 +1,4 @@
-SPEC_FILES = 'spec/**/*-spec.coffee'
+SPEC_FILES = './spec/**/*-spec.coffee'
 
 
 module.exports = (config) ->
@@ -42,7 +42,7 @@ module.exports = (config) ->
 
     # List of files/patterns to load in the browser.
     files: [
-      'node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js'
+      './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js'
       SPEC_FILES
     ]
 
