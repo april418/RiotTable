@@ -1,4 +1,4 @@
-# RiotTable v0.1.0 [![Build Status](https://travis-ci.org/april418/riot-table.svg?branch=master)](https://travis-ci.org/april418/riot-table)
+# RiotTable [![Build Status](https://travis-ci.org/april418/riot-table.svg?branch=master)](https://travis-ci.org/april418/riot-table)
 ## TODO
 - test code
 - add undo / redo
@@ -11,7 +11,7 @@ karma.conf.coffeeには書かなくていい(むしろ書いちゃダメ)。
  参考→ https://github.com/atomify/atomify/issues/62
 
 - RSpecのletみたいに書きたいなら
- - it's not working.
+ - 以下はダメ
  ```coffee
  describe 'Animal', ->
    beforeEach -> @animal = new Animal @kind
@@ -31,7 +31,7 @@ karma.conf.coffeeには書かなくていい(むしろ書いちゃダメ)。
      it 'voice cant be heared', ->
        (=> @animal.voice()).should.throw 'fish voice cant be heared'
  ```
- - work it!
+ - 以下はOK
  ```coffee
  describe 'Animal', ->
    beforeEach => @animal = new Animal @kind
@@ -51,5 +51,5 @@ karma.conf.coffeeには書かなくていい(むしろ書いちゃダメ)。
      it 'voice cant be heared', =>
        (=> @animal.voice()).should.throw 'fish voice cant be heared'
  ```
-参考→https://github.com/mochajs/mocha/issues/971#issuecomment-27387614
+参考→ https://github.com/mochajs/mocha/issues/971#issuecomment-27387614
 

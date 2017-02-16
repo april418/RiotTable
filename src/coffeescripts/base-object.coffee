@@ -13,30 +13,33 @@ class BaseObject extends Object
     Object.assign {}, @
 
   toString: ->
-    "{#{("#{k}: #{v}" for k, v of @ when /Function/.test Object::toString.call(v)).join ','}}"
+    "{#{@map((k, v) -> "#{k}: #{v}").join ','}}"
 
   keys: ->
     Object.keys @
 
   values: ->
-    (v for k, v of @)
+    (@[k] for k in @keys())
 
   each: (block) ->
-    for k, v of @
-      block k, v
+    for k in @keys()
+      block k, @[k]
 
   map: (block) ->
-    (block k, v for k, v of @)
+    results = []
+    @each (k, v) ->
+      results.push block k, v
+    results
 
   all: (block) ->
-    for k, v of @
-      unless block k, v
+    for k in @keys()
+      unless block k, @[k]
         return false
     true
 
   any: (block) ->
-    for k, v of @
-      if block k, v
+    for k in @keys()
+      if block k, @[k]
         return true
     false
 
