@@ -27,7 +27,8 @@
     "watch:coffeescripts:server": "watch 'npm run build:coffeescripts:server' example/server/coffeescripts/",
     "watch:pug": "watch 'npm run build:pug' example/client/templates/",
     "watch:sass": "watch 'npm run build:sass' src/stylesheets/ example/client/stylesheets/",
-    "test": "karma start"
+    "test": "karma start",
+    "ci:travis": "karma start --reporters progress"
   },
   "repository": "https://github.com/april418/riot-table.git",
   "author": "april418",
