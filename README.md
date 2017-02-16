@@ -6,12 +6,12 @@
 
 ## はまったことの共有
 - 何故か2回コンパイルされる
-package.jsonにbrowserifyフィールドを書いたなら、
+ - package.jsonにbrowserifyフィールドを書いたなら、
 karma.conf.coffeeには書かなくていい(むしろ書いちゃダメ)。
 参考→ https://github.com/atomify/atomify/issues/62
 
 - RSpecのletみたいに書きたいなら
-it's not working.
+ - it's not working.
 ```coffee
 describe 'Animal', ->
   beforeEach -> @animal = new Animal @kind
@@ -31,7 +31,7 @@ describe 'Animal', ->
       it 'voice cant be heared', ->
         (=> @animal.voice()).should.throw 'fish voice cant be heared'
 ```
-work it!
+ - work it!
 ```coffee
 describe 'Animal', ->
   beforeEach => @animal = new Animal @kind
