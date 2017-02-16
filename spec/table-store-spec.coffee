@@ -24,12 +24,10 @@ describe 'TableStore', ->
     beforeEach =>
       @store.pushCurrentStateInFutureStates()
 
-    #it '取得した値が@stateの値と同じこと', =>
-    #  expect(@store.popFromFutureStates()).to.eql @store.state
+    it '取得した値が@stateの値と同じこと', =>
+      expect(@store.popFromFutureStates()).to.eql @store.state
 
-    #it '@stateが変更されても返却値が変更されないこと', =>
-    #  beforeEach =>
-    #    @store.state.setHeader()
-
-    #  expect(@store.popFromFutureStates()).to.not.eql @store.state
+    it '@stateが変更されても返却値が変更されないこと', =>
+      @store.state.setHeader()
+      expect(@store.popFromFutureStates()).to.not.eql @store.state
 

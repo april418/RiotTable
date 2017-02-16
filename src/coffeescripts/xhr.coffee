@@ -7,12 +7,12 @@ class XHR
     url: null
     method: 'GET'
     dataType: 'json'
-    data: {}
     async: true
 
   constructor: (options = {}) ->
     throw new MissingUrlError() unless options.url?
     Object.assign @, XHR.INITIAL_STATE, options
+    @data ?= {}
 
   createGetParameter: ->
     '?' + ("#{k}=#{v}" for k, v of @data).join '&'

@@ -2,12 +2,9 @@ TableState = require './table-state.coffee'
 
 
 class TableStore
-  @INITIAL_STATE:
-    futureStates: []
-    pastStates: []
-
   constructor: (params ={}) ->
-    Object.assign @, TableStore.INITIAL_STATE
+    @futureStates = []
+    @pastStates = []
     @initializeState params
 
   setState: (state) ->

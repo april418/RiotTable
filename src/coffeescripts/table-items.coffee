@@ -6,11 +6,11 @@ ORDER_VALUES = CONSTANTS.ORDER_VALUES
 
 class TableItems
   @INITIAL_STATE:
-    items: []
     count: 0
 
   constructor: (items = []) ->
     Object.assign @, TableItems.INITIAL_STATE
+    @items = []
     @addItems items
 
   clone: ->
