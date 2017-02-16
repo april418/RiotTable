@@ -1,4 +1,4 @@
-# RiotTable
+# RiotTable v0.1.0 [![Build Status](https://travis-ci.org/april418/riot-table.svg?branch=master)](https://travis-ci.org/april418/riot-table)
 ## TODO
 - test code
 - add undo / redo
