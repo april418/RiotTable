@@ -13,7 +13,7 @@ class BaseObject extends Object
     Object.assign {}, @
 
   toString: ->
-    "{#{("#{k}: #{v}" for k, v of @).join ','}}"
+    "{#{("#{k}: #{v}" for k, v of @ when /Function/.test Object::toString.call(v)).join ','}}"
 
   keys: ->
     Object.keys @

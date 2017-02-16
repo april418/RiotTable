@@ -1,6 +1,5 @@
 describe 'TableStore', ->
   TableStore = require '../src/coffeescripts/table-store.coffee'
-  TableState = require '../src/coffeescripts/table-state.coffee'
   store = null
 
   beforeEach ->
@@ -15,7 +14,7 @@ describe 'TableStore', ->
       ]
 
   describe '#pushCurrentStateInFutureStates', ->
-    before ->
+    beforeEach ->
       store.pushCurrentStateInFutureStates()
 
     it '@futureStatesに@stateの値が格納されていること', ->
@@ -23,10 +22,15 @@ describe 'TableStore', ->
       expect(store.futureStates).to.include store.state
 
   describe '#popFromFutureStates', ->
-    newState = new TableState()
+    beforeEach ->
+      store.pushCurrentStateInFutureStates()
 
-    before ->
+    it '取得した値が@stateの値と同じこと', ->
+      expect(store.popFromFutureStates()).to.eql store.state
 
-    it '', ->
-      expect(store.popFromFutureStates()).to.equal newState
+    it '取得したインスタンスが@stateと別物であること', ->
+      beforeEach ->
+        store.state.setHeader()
+
+      expect(store.popFromFutureStates()).to.not.eql store.state
 

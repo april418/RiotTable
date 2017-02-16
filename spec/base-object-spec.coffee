@@ -1,4 +1,5 @@
 describe 'BaseObject', ->
+  BaseObject = require '../src/coffeescripts/base-object.coffee'
   object = null
 
   beforeEach ->
@@ -8,6 +9,8 @@ describe 'BaseObject', ->
       baz: 5
 
   describe '#clone', ->
+    clone = null
+
     beforeEach ->
       clone = object.clone()
 
@@ -25,23 +28,29 @@ describe 'BaseObject', ->
     it 'pending...'
 
   describe '#keys', ->
-    it 'pending...'
+    it '返却値が正しいこと', ->
+      expect(object.keys()).to.eql ['hoge', 'foo', 'baz']
 
   describe '#values', ->
-    it 'pending...'
+    it '返却値が正しいこと', ->
+      expect(object.values()).to.eql ['huga', 'bar', 5]
 
   describe '#each', ->
     it 'pending...'
 
   describe '#map', ->
-    it 'pending...'
+    it '返却値が正しいこと', ->
+      expect(object.map (k, v) -> k).to.eql ['hoge', 'foo', 'baz']
 
   describe '#all', ->
-    it 'pending...'
+    it '返却値が正しいこと', ->
+      expect(object.all (k, v) -> /String/.test Object::toString.call(v)).to.be.false
 
   describe '#any', ->
-    it 'pending...'
+    it '返却値が正しいこと', ->
+      expect(object.any (k, v) -> /Number/.test Object::toString.call(v)).to.be.true
 
   describe '#match', ->
-    it 'pending...'
+    it '返却値が正しいこと', ->
+      expect(object.match '5').to.be.true
 

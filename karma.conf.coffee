@@ -1,3 +1,6 @@
+SPEC_FILES = 'spec/**/*-spec.coffee'
+
+
 module.exports = (config) ->
   config.set
     # Enable or disable watching files and executing the tests whenever one of these files changes.
@@ -40,7 +43,7 @@ module.exports = (config) ->
     # List of files/patterns to load in the browser.
     files: [
       'node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js'
-      'spec/**/*-spec.coffee'
+      SPEC_FILES
     ]
 
     # List of test frameworks you want to use.
@@ -89,7 +92,7 @@ module.exports = (config) ->
     # A map of preprocessors to use.
     # Preprocessors can be loaded through plugins.
     preprocessors:
-      'spec/**/*-spec.coffee': [
+      "#{SPEC_FILES}": [
         'browserify'
       ]
 

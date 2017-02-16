@@ -5,7 +5,7 @@ describe 'TableAction', ->
   beforeEach ->
     action = new TableAction 'test', 'I am test.'
 
-  describe 'constructor', ->
+  describe '#constructor', ->
     it '引数にtypeがないときエラーになること', ->
       (-> new TableAction()).should.throw()
 
